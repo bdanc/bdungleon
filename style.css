@@ -1,0 +1,214 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font: "Poppins", sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #333;
+  background: rgb(58, 32, 24);
+  display: flex;
+  align-items: center;
+  flex-flow: column wrap;
+}
+
+.header {
+  background-image: linear-gradient(
+    rgb(81, 125, 207) 0px,
+    rgb(26, 47, 154) 100%
+  );
+  color: #04fb04;
+  height: 200px;
+  width: 150vh;
+  text-align: center;
+}
+
+.header h1 {
+  font-size: 7rem;
+  line-height: 1.2;
+  justify-items: center;
+  text-shadow: 10px 10px 10px black;
+}
+
+.boxes {
+  display: flex;
+  height: 500px;
+  width: 500px;
+  margin-right: 350px;
+  margin-top: 20px;
+}
+
+.box {
+  background: #1e471e;
+  color: #fff;
+  height: 3vh;
+  width: 3vh;
+  animation: show 250ms 250ms cubic-bezier(0.38, 0.97, 0.56, 0.76) forwards;
+  opacity: 0;
+  transform-origin: top center;
+}
+
+@keyframes show {
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Corner Tiles */
+
+._3 {
+  border-right: solid;
+  border-top: solid;
+  border-color: #fff;
+  border-left: 1px solid #193a19a6;
+  border-bottom: 1px solid #193a19a6;
+  border-width: 1em, 1em;
+}
+
+._6 {
+  border-bottom: solid;
+  border-right: solid;
+  border-top: 1px solid #193a19a6;
+  border-left: 1px solid #193a19a6;
+  border-width: inherit, 1em, 1em, inherit;
+}
+
+._9 {
+  border-left: solid;
+  border-top: solid;
+  border-right: 1px solid #193a19a6;
+  border-bottom: 1px solid #193a19a6;
+  border-width: 1em, inherit, inherit, 1em;
+}
+
+._12 {
+  border-left: solid;
+  border-bottom: solid;
+  border-top: 1px solid #193a19a6;
+  border-right: 1px solid #193a19a6;
+  border-width: inherit, inherit, 1em, 1em;
+}
+
+/* Hallways */
+
+._5 {
+  border-top: solid;
+  border-bottom: solid;
+  border-left: 1px solid #193a19a6;
+  border-right: 1px solid #193a19a6;
+  border-width: 1em, inherit, 1em, inherit;
+}
+._10 {
+  border-left: solid;
+  border-right: solid;
+  border-top: 1px solid #193a19a6;
+  border-bottom: 1px solid #193a19a6;
+  border-width: inherit, 1em, inherit, 1em;
+}
+
+/* T-connectors */
+
+._1 {
+  border-top: solid;
+  border-bottom: 1px solid #193a19a6;
+  border-left: 1px solid #193a19a6;
+  border-right: 1px solid #193a19a6;
+  border-width: 1em, inherit, inherit, inherit;
+}
+
+._2 {
+  border-right: solid;
+  border-left: 1px solid #193a19a6;
+  border-bottom: 1px solid #193a19a6;
+  border-top: 1px solid #193a19a6;
+  border-width: inherit, 1em, inherit, inherit;
+}
+
+._4 {
+  border-bottom: solid;
+  border-top: 1px solid #193a19a6;
+  border-left: 1px solid #193a19a6;
+  border-right: 1px solid #193a19a6;
+  border-width: inherit, inherit, 1em, inherit;
+}
+
+._8 {
+  border-left: solid;
+  border-right: 1px solid #193a19a6;
+  border-top: 1px solid #193a19a6;
+  border-bottom: 1px solid #193a19a6;
+  border-width: inherit, inherit, inherit, 1em;
+}
+
+/* Dead Ends */
+
+._7 {
+  border-top: solid;
+  border-right: solid;
+  border-bottom: solid;
+  border-left: 1px solid #193a19a6;
+  border-width: 1em, 1em, 1em, inherit;
+}
+
+._11 {
+  border-top: solid;
+  border-right: solid;
+  border-left: solid;
+  border-bottom: 1px solid #193a19a6;
+  border-width: 1em, 1em, inherit, 1em;
+}
+
+._13 {
+  border-top: solid;
+  border-bottom: solid;
+  border-left: solid;
+  border-right: 1px solid #193a19a6;
+  border-width: 1em, inherit, 1em, 1em;
+}
+
+._14 {
+  border-right: solid;
+  border-bottom: solid;
+  border-left: solid;
+  border-top: 1px solid#193a19a6;
+  border-width: inherit, 1em, 1em, 1em;
+}
+
+/* Open Room */
+
+._0 {
+  border: 1px solid #193a19a6;
+}
+
+.ui {
+  display: flex;
+  margin-top: 150px;
+}
+
+.btn {
+  width: 250px;
+  height: 100px;
+  font-size: 25px;
+  font: "Poppins", sans-serif;
+  line-height: 1.5;
+  border-radius: 20px;
+  background-image: linear-gradient(
+    rgb(81, 125, 207) 0px,
+    rgb(26, 47, 154) 100%
+  );
+  color: #fff;
+}
+
+.resizedTextbox {
+  width: 250px;
+  height: 100px;
+  font-size: 2vh;
+  font-family: monospace, sans-serif;
+  border-radius: 20px;
+}
