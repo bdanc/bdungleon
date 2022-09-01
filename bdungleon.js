@@ -80,3 +80,9 @@ const clearAll = function () {
 init();
 
 btnInput.addEventListener("click", sendMaze);
+textField.addEventListener("click", function () {
+  const isActive = document.activeElement;
+  if (isActive === textField) {
+    textField.value = "";
+  }
+});
