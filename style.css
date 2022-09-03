@@ -23,7 +23,7 @@ body {
     rgb(81, 125, 207) 0px,
     rgb(26, 47, 154) 100%
   );
-  color: #04fb04;
+  color: #95d600;
   text-align: center;
   justify-content: center;
   height: fit-content;
@@ -209,6 +209,7 @@ body {
   width: 15vw;
   height: 10vh;
   color: #fff;
+  margin-right: 1px;
 }
 
 .resizedTextbox {
@@ -217,4 +218,5 @@ body {
   width: 350px;
   height: 10vh;
   font-size: 2vh;
+  margin-right: 5px;
 }
