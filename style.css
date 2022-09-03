@@ -12,9 +12,10 @@ body {
   line-height: 1.5;
   color: #333;
   background: rgb(58, 32, 24);
+  width: 100vw;
+  height: 100vh;
   display: flex;
-  align-items: center;
-  flex-flow: column wrap;
+  flex-direction: column;
 }
 
 .header {
@@ -23,31 +24,36 @@ body {
     rgb(26, 47, 154) 100%
   );
   color: #04fb04;
-  height: 200px;
-  width: 150vh;
   text-align: center;
+  justify-content: center;
+  height: fit-content;
+  width: auto;
+  display: inline-block;
 }
 
 .header h1 {
-  font-size: 7rem;
+  /* flex:1 */
+  font-size: 5vh;
   line-height: 1.2;
-  justify-items: center;
+  /* justify-content: center; */
   text-shadow: 10px 10px 10px black;
 }
 
 .boxes {
   display: flex;
-  height: 500px;
-  width: 500px;
-  margin-right: 350px;
+  height: auto;
+  width: auto;
   margin-top: 20px;
+  margin-bottom: 20px;
+  align-items: center;
+  justify-content: center;
 }
 
 .box {
   background: #1e471e;
   color: #fff;
-  height: 3vh;
-  width: 3vh;
+  height: 30px;
+  width: 28px;
   animation: show 250ms 250ms cubic-bezier(0.38, 0.97, 0.56, 0.76) forwards;
   opacity: 0;
   transform-origin: top center;
@@ -188,27 +194,27 @@ body {
 
 .ui {
   display: flex;
-  margin-top: 150px;
+  align-items: flex-start;
+  justify-content: center;
 }
 
 .btn {
-  width: 250px;
-  height: 100px;
-  font-size: 25px;
   font: "Poppins", sans-serif;
   line-height: 1.5;
-  border-radius: 20px;
+  border-radius: 10px;
   background-image: linear-gradient(
     rgb(81, 125, 207) 0px,
     rgb(26, 47, 154) 100%
   );
+  width: 15vw;
+  height: 10vh;
   color: #fff;
 }
 
 .resizedTextbox {
-  width: 250px;
-  height: 100px;
+  font-family: "Arial", sans-serif;
+  border-radius: 10px;
+  width: 350px;
+  height: 10vh;
   font-size: 2vh;
-  font-family: monospace, sans-serif;
-  border-radius: 20px;
 }

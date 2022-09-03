@@ -1,20 +1,20 @@
-let Maze;
+let mazeData;
 
 const containers = document.body.querySelector(".boxes");
 const btnInput = document.body.querySelector(".btn");
 const textField = document.body.querySelector(".resizedTextbox");
 
-const mazeMaker = function () {
+const mazeMaker = function (mazeData) {
   // Create a container for each array element
-  Maze.forEach((_, index) => {
+  mazeData.forEach((_, index) => {
     containers.insertAdjacentHTML(
       "beforeend",
       `<div class="container container--${index}"></div>`
     );
   });
   // Create a box for each element within each element of the array of arrays
-  for (let i = 0; i < Maze.length; i++) {
-    for (let x = 0; x < Maze[i].length; x++) {
+  for (let i = 0; i < mazeData.length; i++) {
+    for (let x = 0; x < mazeData[i].length; x++) {
       containers.children[i].insertAdjacentHTML(
         "beforeend",
         `<div class= "box box--${x}"</div>`
@@ -23,7 +23,7 @@ const mazeMaker = function () {
       // give each box the correct class
 
       let box = containers.children[i].children[x];
-      box.classList.add(`_${Maze[i][x]}`);
+      box.classList.add(`_${mazeData[i][x]}`);
     }
   }
 };
@@ -33,9 +33,9 @@ const sendMaze = function () {
     return (textField.value = "Something is wrong please confirm your paste!");
   clearAll();
   mazeString = textField.value;
-  Maze = JSON.parse(mazeString);
-  console.log(Maze);
-  mazeMaker();
+  mazeData = JSON.parse(mazeString);
+  console.log(mazeData);
+  mazeMaker(mazeData);
   init();
 };
 
