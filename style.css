@@ -32,10 +32,8 @@ body {
 }
 
 .header h1 {
-  /* flex:1 */
   font-size: 5vh;
   line-height: 1.2;
-  /* justify-content: center; */
   text-shadow: 10px 10px 10px black;
 }
 
@@ -52,7 +50,7 @@ body {
 .box {
   background: #1e471e;
   color: #fff;
-  height: 30px;
+  height: 28px;
   width: 28px;
   animation: show 250ms 250ms cubic-bezier(0.38, 0.97, 0.56, 0.76) forwards;
   opacity: 0;
@@ -206,16 +204,20 @@ body {
     rgb(81, 125, 207) 0px,
     rgb(26, 47, 154) 100%
   );
-  width: 15vw;
-  height: 10vh;
+  min-width: 13vh;
+  min-height: 10vh;
+  width: fit-content;
+  height: fit-content;
   color: #fff;
-  margin-right: 1px;
+  margin-right: 3px;
+  padding: 3px;
+  font-size: 20px;
 }
 
 .resizedTextbox {
   font-family: "Arial", sans-serif;
   border-radius: 10px;
-  width: 350px;
+  width: 200px;
   height: 10vh;
   font-size: 2vh;
   margin-right: 5px;
