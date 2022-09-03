@@ -49,7 +49,14 @@ const clearAll = function () {
 
 init();
 
-btnInput.addEventListener("click", sendMaze);
+btnInput.addEventListener("click", async function () {
+  if (navigator.userAgent.indexOf("Firefox") > -1) {
+    return sendMaze();
+  }
+  clearAll();
+  const text = await navigator.clipboard.readText();
+  mazeMaker(JSON.parse(text));
+});
 textField.addEventListener("click", function () {
   const isActive = document.activeElement;
   if (isActive === textField) {
