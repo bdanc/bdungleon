@@ -63,3 +63,7 @@ textField.addEventListener("click", function () {
     textField.value = "";
   }
 });
+
+window.addEventListener("message", (event) => {
+  mazeMaker(event);
+});
