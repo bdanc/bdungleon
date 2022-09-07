@@ -1,9 +1,8 @@
 let mazeData;
 
 const containers = document.body.querySelector(".boxes");
-const btnInput = document.body.querySelector(".btn");
-const textField = document.body.querySelector(".resizedTextbox");
 
+// Loops over the array of arrays to draw each tile
 const mazeMaker = function (mazeData) {
   // Create a container for each array element
   mazeData.forEach((_, index) => {
@@ -28,17 +27,6 @@ const mazeMaker = function (mazeData) {
   }
 };
 
-const sendMaze = function () {
-  if (textField.value[0][0] < 0 || textField.value[0][0] > 14)
-    return (textField.value = "Something is wrong please confirm your paste!");
-  clearAll();
-  mazeString = textField.value;
-  mazeData = JSON.parse(mazeString);
-  console.log(mazeData);
-  mazeMaker(mazeData);
-  init();
-};
-
 const init = function () {
   textField.value = "Paste Maze Data Here!";
 };
@@ -49,21 +37,7 @@ const clearAll = function () {
 
 init();
 
-btnInput.addEventListener("click", async function () {
-  if (navigator.userAgent.indexOf("Firefox") > -1) {
-    return sendMaze();
-  }
-  clearAll();
-  const text = await navigator.clipboard.readText();
-  mazeMaker(JSON.parse(text));
-});
-textField.addEventListener("click", function () {
-  const isActive = document.activeElement;
-  if (isActive === textField) {
-    textField.value = "";
-  }
-});
-
+// Waits for for Maze.M data from bdungly-buddy companion userscript and interprets maze from it
 window.addEventListener("message", (event) => {
   mazeMaker(event.data);
 });
