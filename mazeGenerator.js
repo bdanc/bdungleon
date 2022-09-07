@@ -11,6 +11,8 @@ class Maze {
     this.grid = [];
     this.stack = [];
   }
+
+  // creates blank maze based off the specified rows and columns
   setup() {
     for (let r = 0; r < this.rows; r++) {
       let row = [];
@@ -23,11 +25,14 @@ class Maze {
     current = this.grid[0][0];
   }
 
+  //Calls itself to create maze cell by cell
   draw() {
     current.visited = true;
 
+    // Uses the checkNeighbors to figure out where to go next
     let next = current.checkNeighbors();
 
+    // adds current cell to stack, removes walls
     if (next) {
       next.visited = true;
       this.stack.push(current);
@@ -60,6 +65,7 @@ class Cell {
     };
   }
 
+  // Figures out how many neighbors a cell has and where to go next
   checkNeighbors() {
     let grid = this.parentGrid;
     let row = this.rowNum;
@@ -90,6 +96,7 @@ class Cell {
     }
   }
 
+  // Begins with 4 walls and removes walls to make the maze completable
   removeWalls(cell1, cell2) {
     let x = cell1.colNum - cell2.colNum;
 
@@ -119,11 +126,13 @@ function mazeInit(rows, columns) {
   newMaze.draw();
 }
 
+// Write the array for the bdungleon to loop over
 function arrayMaker() {
   let mazeArr = [];
   newMaze.grid.forEach(() => mazeArr.push([]));
   for (e = 0; e < newMaze.grid.length; e++) {
     for (i = 0; i < newMaze.grid[e].length; i++) {
+      // Filters for the different tile shapes
       //   1
       if (
         newMaze.grid[e][i].walls.topWall === true &&
@@ -132,6 +141,7 @@ function arrayMaker() {
         newMaze.grid[e][i].walls.leftWall === false
       )
         mazeArr[i].push(1);
+
       //   2
       if (
         newMaze.grid[e][i].walls.topWall === false &&
@@ -140,6 +150,7 @@ function arrayMaker() {
         newMaze.grid[e][i].walls.leftWall === false
       )
         mazeArr[i].push(2);
+
       //   3
       if (
         newMaze.grid[e][i].walls.topWall === true &&
@@ -148,6 +159,7 @@ function arrayMaker() {
         newMaze.grid[e][i].walls.leftWall === false
       )
         mazeArr[i].push(3);
+
       //   4
       if (
         newMaze.grid[e][i].walls.topWall === false &&
@@ -156,6 +168,7 @@ function arrayMaker() {
         newMaze.grid[e][i].walls.leftWall === false
       )
         mazeArr[i].push(4);
+
       //   5
       if (
         newMaze.grid[e][i].walls.topWall === true &&
@@ -164,6 +177,7 @@ function arrayMaker() {
         newMaze.grid[e][i].walls.leftWall === false
       )
         mazeArr[i].push(5);
+
       //   6
       if (
         newMaze.grid[e][i].walls.topWall === false &&
@@ -172,6 +186,7 @@ function arrayMaker() {
         newMaze.grid[e][i].walls.leftWall === false
       )
         mazeArr[i].push(6);
+
       //   7
       if (
         newMaze.grid[e][i].walls.topWall === true &&
@@ -180,6 +195,7 @@ function arrayMaker() {
         newMaze.grid[e][i].walls.leftWall === false
       )
         mazeArr[i].push(7);
+
       //   8
       if (
         newMaze.grid[e][i].walls.topWall === false &&
@@ -188,6 +204,7 @@ function arrayMaker() {
         newMaze.grid[e][i].walls.leftWall === true
       )
         mazeArr[i].push(8);
+
       //   9
       if (
         newMaze.grid[e][i].walls.topWall === true &&
@@ -196,6 +213,7 @@ function arrayMaker() {
         newMaze.grid[e][i].walls.leftWall === true
       )
         mazeArr[i].push(9);
+
       //   10
       if (
         newMaze.grid[e][i].walls.topWall === false &&
@@ -204,6 +222,7 @@ function arrayMaker() {
         newMaze.grid[e][i].walls.leftWall === true
       )
         mazeArr[i].push(10);
+
       //   11
       if (
         newMaze.grid[e][i].walls.topWall === true &&
@@ -212,6 +231,7 @@ function arrayMaker() {
         newMaze.grid[e][i].walls.leftWall === true
       )
         mazeArr[i].push(11);
+
       //   12
       if (
         newMaze.grid[e][i].walls.topWall === false &&
@@ -220,6 +240,7 @@ function arrayMaker() {
         newMaze.grid[e][i].walls.leftWall === true
       )
         mazeArr[i].push(12);
+
       //   13
       if (
         newMaze.grid[e][i].walls.topWall === true &&
@@ -228,6 +249,7 @@ function arrayMaker() {
         newMaze.grid[e][i].walls.leftWall === true
       )
         mazeArr[i].push(13);
+
       //   14
       if (
         newMaze.grid[e][i].walls.topWall === false &&
@@ -247,8 +269,6 @@ function arrayMaker() {
     }
   }
 
-  // console.log(newMaze);
-  // console.log(mazeArr);
   return mazeArr;
 }
 
