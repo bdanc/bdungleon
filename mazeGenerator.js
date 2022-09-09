@@ -126,7 +126,7 @@ function mazeInit(rows, columns) {
   newMaze.draw();
 }
 
-// Write the array for the bdungleon to loop over
+// Build the array for the bdungleon to loop over
 function arrayMaker() {
   let mazeArr = [];
   newMaze.grid.forEach(() => mazeArr.push([]));

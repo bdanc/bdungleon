@@ -27,15 +27,9 @@ const mazeMaker = function (mazeData) {
   }
 };
 
-const init = function () {
-  textField.value = "Paste Maze Data Here!";
-};
-
 const clearAll = function () {
   containers.innerHTML = "";
 };
-
-init();
 
 // Waits for for Maze.M data from bdungly-buddy companion userscript and interprets maze from it
 window.addEventListener("message", (event) => {
