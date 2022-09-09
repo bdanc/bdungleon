@@ -33,5 +33,6 @@ const clearAll = function () {
 
 // Waits for for Maze.M data from bdungly-buddy companion userscript and interprets maze from it
 window.addEventListener("message", (event) => {
+  clearAll();
   mazeMaker(event.data);
 });
