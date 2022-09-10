@@ -41,16 +41,14 @@ const clearAll = function () {
   containers.innerHTML = "";
 };
 
-let mouseDown = 0;
-document.body.onmousedown = function () {
-  ++mouseDown;
-};
-document.body.onmouseup = function () {
-  --mouseDown;
-};
+let isMouseDown = false;
+
+document.addEventListener("mousedown", () => (isMouseDown = true), true);
+
+document.addEventListener("mouseup", () => (isMouseDown = false), true);
 
 const onHover = function (box) {
-  if (mouseDown) {
+  if (isMouseDown) {
     if (box.colorState === 0) {
       box.style.background = "#000";
       return box.colorState++;
