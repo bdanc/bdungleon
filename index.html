@@ -14,11 +14,19 @@
     <title>bdunglify.io</title>
   </head>
   <body>
-    <header class="header"><h1>BDUNGLEON</h1></header>
+    <header ondragstart="return false" class="header noselect">
+      <h1>BDUNGLEON</h1>
+    </header>
     <!-- boxes is where the tiles go -->
-    <section class="boxes"></section>
-    <section class="ui">
-      <button class="btn btn---random" type="button">bdunglify!</button>
+    <section ondragstart="return false" class="boxes"></section>
+    <section ondragstart="return false" class="ui">
+      <button
+        ondragstart="return false"
+        class="btn noselect btn---random"
+        type="button"
+      >
+        bdunglify!
+      </button>
     </section>
     <script src="mazeGenerator.js"></script>
     <script src="bdungleon.js"></script>
