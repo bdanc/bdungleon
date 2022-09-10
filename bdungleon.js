@@ -16,19 +16,61 @@ const mazeMaker = function (mazeData) {
     for (let x = 0; x < mazeData[i].length; x++) {
       containers.children[i].insertAdjacentHTML(
         "beforeend",
-        `<div class= "box box--${x}"</div>`
+        `<div ondragstart="return false" class= "box box--${x}"></div>`
       );
 
-      // give each box the correct class
-
       let box = containers.children[i].children[x];
+
+      // assigns the correct class based off the mazeData array
       box.classList.add(`_${mazeData[i][x]}`);
+
+      // event listeners for color changing
+      box.addEventListener("mouseenter", () => {
+        onHover(box);
+      });
+      box.addEventListener("mousedown", () => {
+        onClick(box);
+      });
+
+      box.colorState = 0;
     }
   }
 };
 
 const clearAll = function () {
   containers.innerHTML = "";
+};
+
+let mouseDown = 0;
+document.body.onmousedown = function () {
+  ++mouseDown;
+};
+document.body.onmouseup = function () {
+  --mouseDown;
+};
+
+const onHover = function (box) {
+  if (mouseDown) {
+    if (box.colorState === 0) {
+      box.style.background = "#000";
+      return box.colorState++;
+    }
+    if (box.colorState > 0) {
+      box.style.background = "#1e471e";
+      return (box.colorState = 0);
+    }
+  }
+};
+
+const onClick = function (box) {
+  if (box.colorState === 0) {
+    box.style.background = "#000";
+    return box.colorState++;
+  }
+  if (box.colorState > 0) {
+    box.style.background = "#1e471e";
+    return (box.colorState = 0);
+  }
 };
 
 // Waits for for Maze.M data from bdungly-buddy companion userscript and interprets maze from it
